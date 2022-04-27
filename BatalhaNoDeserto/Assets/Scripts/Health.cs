@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
     [field: SerializeField] public float HealthPoints { get; private set; }
     [SerializeField] private float maxHP = 0;
-    [SerializeField] private Text hpText;
+    [SerializeField] private TextMeshProUGUI hpText;
 
     public void ChangeHealth(float value)
     {
