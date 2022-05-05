@@ -17,6 +17,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Colorblind colorblind;
     [SerializeField] bool       InGame;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject deathCamera;
 
 
     private void Start()
@@ -26,6 +27,7 @@ public class UiMaster : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        deathCamera.SetActive(false);
     }
     private void Update()
     {
@@ -44,6 +46,7 @@ public class UiMaster : MonoBehaviour
     public void OpenLoseMenu()
     {
         firstButtonLost.Select();
+        deathCamera.SetActive(true);
         Time.timeScale = 0;
         lostMenu.SetActive(true);
     }
