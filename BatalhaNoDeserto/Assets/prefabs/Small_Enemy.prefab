@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094bbcec499379d4598cdb0e63d052df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMax: 2
+  <TimerMax>k__BackingField: 1.5
   spawnObject: {fileID: 2818164954906461468, guid: 8ca9be1212d7f23449416d407e09acf7, type: 3}
   automatic: 1
   onTriger: 0
@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 1045629832}
   - component: {fileID: 1045629831}
   - component: {fileID: 1045629834}
+  - component: {fileID: 2618544807129083713}
   m_Layer: 0
   m_Name: Small_Enemy
   m_TagString: Enemy
@@ -678,7 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc62b91fe540d046b81cbc7c00f7882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 1
+  <Velocity>k__BackingField: 0.8
 --- !u!114 &1045629834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,8 +693,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <HealthPoints>k__BackingField: 0
-  maxHP: 2
+  maxHP: 1
   hpText: {fileID: 0}
+--- !u!114 &2618544807129083713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596479093584231107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fef0f446c280f941b61268e6545d912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns:
+  - {fileID: 1029888734}
 --- !u!1 &3596479093664002633
 GameObject:
   m_ObjectHideFlags: 0

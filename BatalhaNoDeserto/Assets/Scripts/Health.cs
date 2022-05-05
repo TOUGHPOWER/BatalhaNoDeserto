@@ -6,9 +6,9 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    [field: SerializeField] public int HealthPoints { get; private set; }
-    [SerializeField] private int maxHP = 0;
-    [SerializeField] private TextMeshProUGUI hpText;
+    [field: SerializeField] public int          HealthPoints { get; private set; }
+    [SerializeField] private int                maxHP = 0;
+    [SerializeField] private TextMeshProUGUI    hpText;
 
     public void ChangeHealth(int value)
     {
@@ -42,12 +42,15 @@ public class Health : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void DestroySelf() => Destroy(gameObject);
+    public void AddMaxHp(int value)
+    {
+        maxHP += value;
+        HealthPoints = maxHP;
+    }
 
     private void Start()
     {
         HealthPoints = maxHP;
-        print(HealthPoints);
         if (hpText != null)
             hpText.text = HealthPoints.ToString();
     }

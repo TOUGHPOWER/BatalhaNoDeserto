@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveFoward : MonoBehaviour
 {
-    [SerializeField] private float velocity;
+    [field: SerializeField] public float Velocity { get; set; }
     private new Rigidbody rigidbody;
 
     private void Start()
@@ -14,6 +14,6 @@ public class MoveFoward : MonoBehaviour
 
     private void Update()
     {
-        rigidbody.velocity = transform.forward * velocity * 10 + Vector3.up * rigidbody.velocity.y;
+        rigidbody.velocity = transform.forward * Velocity * 10 + Vector3.up * rigidbody.velocity.y;
     }
 }

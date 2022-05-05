@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] float          timerMax;
-    [SerializeField] GameObject     spawnObject;
-    [SerializeField] bool           automatic;
-    [SerializeField] bool           onTriger;
-    [SerializeField] bool           button;
-    private float                   timer;
+    [field: SerializeField] public float TimerMax { get; set; }
+    [SerializeField] GameObject         spawnObject;
+    [SerializeField] bool               automatic;
+    [SerializeField] bool               onTriger;
+    [SerializeField] bool               button;
+    private float                       timer;
 
     private void Update()
     {
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
     private void Shoot() 
     {
         Instantiate(spawnObject, transform.position, transform.rotation);
-        timer = timerMax;
+        timer = TimerMax;
     }
 
     private void OnTriggerEnter(Collider other)

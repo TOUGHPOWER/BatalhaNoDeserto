@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094bbcec499379d4598cdb0e63d052df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMax: 2
+  <TimerMax>k__BackingField: 0
   spawnObject: {fileID: 3596479093584231107, guid: 8bdedcc335c423d4cb65c70c8eb08a55, type: 3}
   automatic: 0
   onTriger: 1
@@ -61,4 +61,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 25, z: 23}
-  m_Center: {x: 0, y: 0, z: -50}
+  m_Center: {x: 0, y: 0, z: -40}
