@@ -9,27 +9,18 @@ public class DamageZone : MonoBehaviour
     [SerializeField]
     private bool destroyInInpact;
     [SerializeField]
-    private bool damageOverTime;
+    private string targetTag;
 
     private void OnTriggerEnter(Collider other)
     {
         Health target = other.gameObject.GetComponent<Health>();
 
-        if (target != null)
+        if (target != null && target.gameObject.tag == targetTag) 
+        {
             target.ChangeHealth(-damage);
 
-        if (destroyInInpact)
-            Destroy(gameObject);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (damageOverTime)
-        {
-            Health target = other.gameObject.GetComponent<Health>();
-
-            if (target != null)
-                target.ChangeHealth(-damage * Time.deltaTime);
-        }
+            if (destroyInInpact)
+                Destroy(gameObject);
+        }  
     }
 }

@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (onTriger)
+        if (onTriger && other.gameObject.tag == "Player")
             Shoot();
     }
 }

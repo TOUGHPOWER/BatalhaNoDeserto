@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 velocty = transform.forward * (velocityOffset + Input.GetAxis("Vertical") * velocityController) * 10  + 
             transform.right*Input.GetAxis("Horizontal") *velocityController * 10;
+        velocty.y = rigidbody.velocity.y;
         rigidbody.velocity = velocty;
     }
 }

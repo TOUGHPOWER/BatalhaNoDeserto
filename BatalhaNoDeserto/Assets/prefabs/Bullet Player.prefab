@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4323388042124307514}
   - component: {fileID: -449321457033082968}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: Bullet Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2818164954906461468}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   destroyInInpact: 1
-  damageOverTime: 1
+  targetTag: Enemy
 --- !u!1 &3096764009587318397
 GameObject:
   m_ObjectHideFlags: 0

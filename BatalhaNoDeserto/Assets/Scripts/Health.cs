@@ -6,11 +6,11 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    [field: SerializeField] public float HealthPoints { get; private set; }
-    [SerializeField] private float maxHP = 0;
+    [field: SerializeField] public int HealthPoints { get; private set; }
+    [SerializeField] private int maxHP = 0;
     [SerializeField] private TextMeshProUGUI hpText;
 
-    public void ChangeHealth(float value)
+    public void ChangeHealth(int value)
     {
         HealthPoints += value;
         if (HealthPoints > maxHP)
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
             hpText.text = HealthPoints.ToString();
     }
 
-    public void SetHealth(float value)
+    public void SetHealth(int value)
     {
         HealthPoints = value;
         if (HealthPoints > maxHP)
@@ -36,11 +36,10 @@ public class Health : MonoBehaviour
 
     private void Kill()
     {
-        //play animation
         HealthPoints = 0;
         if (hpText != null)
             hpText.text = HealthPoints.ToString();
-        DestroySelf();
+        gameObject.SetActive(false);
     }
 
     private void DestroySelf() => Destroy(gameObject);

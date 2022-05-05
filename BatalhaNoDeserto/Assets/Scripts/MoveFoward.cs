@@ -14,7 +14,6 @@ public class MoveFoward : MonoBehaviour
 
     private void Update()
     {
-        rigidbody.velocity = transform.forward * velocity * 10;
-
+        rigidbody.velocity = transform.forward * velocity * 10 + Vector3.up * rigidbody.velocity.y;
     }
 }
