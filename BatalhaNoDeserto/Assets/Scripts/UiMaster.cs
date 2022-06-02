@@ -84,7 +84,7 @@ public class UiMaster : MonoBehaviour
     public void LoadMainGameScene() 
     {
         SavePrefs();
-        SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene("Level 1");
     }
     public void LoadMainMenu()
     {
