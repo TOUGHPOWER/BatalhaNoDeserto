@@ -25,11 +25,11 @@ public class EnemyController : MonoBehaviour
     private void SetDificulty()
     {
         ui = FindObjectOfType<UiMaster>();
-        hp.AddMaxHp(ui.Dificulty * HEALTH_MODIFIER);
-        move.Velocity += ui.Dificulty * VELOCITY_MODIFIER;
+        //hp.AddMaxHp(ui.Dificulty * HEALTH_MODIFIER);
+        move.Velocity += ui.VelEnemy * VELOCITY_MODIFIER;
         foreach (Spawner gun in guns)
         {
-            gun.TimerMax -= ui.Dificulty * SHOOTING_RATE_MODIFIER;
+            //gun.TimerMax -= ui.Dificulty * SHOOTING_RATE_MODIFIER;
         }
     }
 }

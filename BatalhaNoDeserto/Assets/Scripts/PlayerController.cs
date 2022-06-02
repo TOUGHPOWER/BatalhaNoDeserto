@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float velocityOffset;
+    [SerializeField] private UiMaster ui;
     [SerializeField] private float velocityController;
     private new Rigidbody rigidbody;
     void Start()
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 velocty = transform.forward * (velocityOffset + Input.GetAxis("Vertical") * velocityController) * 10  + 
+        Vector3 velocty = transform.forward * (ui.VelPlayer + Input.GetAxis("Vertical") * velocityController) * 10  + 
             transform.right*Input.GetAxis("Horizontal") *velocityController * 10;
         velocty.y = rigidbody.velocity.y;
         rigidbody.velocity = velocty;

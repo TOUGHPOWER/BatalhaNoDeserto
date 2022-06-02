@@ -11,6 +11,6 @@ public class BulletConmtroller : MonoBehaviour
     {
         move = GetComponent<MoveFoward>();
         ui = FindObjectOfType<UiMaster>();
-        move.Velocity += ui.Dificulty * VEL_MODIFIER;
+        //move.Velocity += ui.Dificulty * VEL_MODIFIER;
     }
 }

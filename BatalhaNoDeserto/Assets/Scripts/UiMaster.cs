@@ -16,12 +16,22 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Button             firstButtonWon;
     [SerializeField] Button             firstButtonLost;
     [SerializeField] Dropdown           colorBlindDropdown;
-    [SerializeField] Dropdown           dificultyDropdown;
+    [SerializeField] Slider             velPlayerSlider;
+    [SerializeField] Slider             velEnemylider;
+    [SerializeField] Slider             velPorjEnemySlider;
+    [SerializeField] Slider             numEnemySlider;
     [Header("Variaveis auxiliares")]
     [SerializeField] Colorblind         colorblind;
     [SerializeField] bool               InGame;
     [SerializeField] GameObject         player;
-    [field: SerializeField] public int  Dificulty { get; private set; }
+
+    [Header("Options")]
+    private int test;
+    [field: SerializeField] public int  VelPlayer { get; private set; }
+    [field: SerializeField] public int  VelEnemy { get; private set; }
+    [field: SerializeField] public int  VelProjectEnemy { get; private set; }
+    [field: SerializeField] public int  NumEnemy { get; private set; }
+    [field: SerializeField] public bool FixedMov { get; private set; }
 
     //funcoes base
     private void Start()
@@ -101,21 +111,33 @@ public class UiMaster : MonoBehaviour
     public void UpdateValues()
     {
         colorblind.Type = colorBlindDropdown.value;
-        Dificulty = dificultyDropdown.value;
-        SavePrefs();
+        VelPlayer = (int)velPlayerSlider.value;
+        VelEnemy = (int)velEnemylider.value;
+        VelProjectEnemy = (int)velPorjEnemySlider.value;
+        NumEnemy = (int)numEnemySlider.value;
     }
+
+    public void ChangePlayerSpeed(float speed) => VelPlayer = (int)speed;
+    public void ChangeEnemySpeed(float speed) => VelEnemy = (int)speed;
+    public void ChangeEnemyBulletSpeed(float speed) => VelProjectEnemy = (int)speed;
+    public void ChangeEnemySpawner(float num) => NumEnemy = (int)num;
 
     public void SavePrefs() 
     {
         PlayerPrefs.SetInt("ColorBlind", colorblind.Type);
-        PlayerPrefs.SetInt("Dificulty", Dificulty);
+        PlayerPrefs.SetInt("VelPlayer", VelPlayer);
+        PlayerPrefs.SetInt("VelEnemy", VelEnemy);
+        PlayerPrefs.SetInt("VelProjectEnemy", VelProjectEnemy);
+        PlayerPrefs.SetInt("NumEnemy", NumEnemy);
     }
 
     public void LoadPrefs() 
     {
         colorBlindDropdown.value = PlayerPrefs.GetInt("ColorBlind", 0);
-        print(PlayerPrefs.GetInt("Dificulty", 0));
-        dificultyDropdown.value = PlayerPrefs.GetInt("Dificulty", 0);
+        velPlayerSlider.value = PlayerPrefs.GetInt("VelPlayer", 0);
+        velEnemylider.value = PlayerPrefs.GetInt("VelEnemy", 0);
+        velPorjEnemySlider.value = PlayerPrefs.GetInt("VelProjectEnemy", 0);
+        numEnemySlider.value = PlayerPrefs.GetInt("NumEnemy", 0);
         UpdateValues();
     }
 }
