@@ -19,7 +19,10 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Slider             velPlayerSlider;
     [SerializeField] Slider             velEnemylider;
     [SerializeField] Slider             velPorjEnemySlider;
-    [SerializeField] Slider             numEnemySlider;
+    [SerializeField] Slider             velPorjPlayerSlider;
+    [SerializeField] Slider             velFRPlayerSlider;
+    [SerializeField] Slider             velFREnemySlider;
+    [SerializeField] Slider             velHPEnemySlider;
     [Header("Variaveis auxiliares")]
     [SerializeField] Colorblind         colorblind;
     [SerializeField] bool               InGame;
@@ -30,7 +33,10 @@ public class UiMaster : MonoBehaviour
     [field: SerializeField] public int  VelPlayer { get; private set; }
     [field: SerializeField] public int  VelEnemy { get; private set; }
     [field: SerializeField] public int  VelProjectEnemy { get; private set; }
-    [field: SerializeField] public int  NumEnemy { get; private set; }
+    [field: SerializeField] public int  VelProjectPlayer { get; private set; }
+    [field: SerializeField] public float  FireRatePlayer { get; private set; }
+    [field: SerializeField] public float  FireRateEnemy { get; private set; }
+    [field: SerializeField] public int  HealthEnemy { get; private set; }
     [field: SerializeField] public bool FixedMov { get; private set; }
 
     //funcoes base
@@ -110,17 +116,23 @@ public class UiMaster : MonoBehaviour
     //saves prefs
     public void UpdateValues()
     {
-        colorblind.Type = colorBlindDropdown.value;
-        VelPlayer = (int)velPlayerSlider.value;
-        VelEnemy = (int)velEnemylider.value;
-        VelProjectEnemy = (int)velPorjEnemySlider.value;
-        NumEnemy = (int)numEnemySlider.value;
+        colorblind.Type     = colorBlindDropdown.value;
+        VelPlayer           = (int)velPlayerSlider.value;
+        VelEnemy            = (int)velEnemylider.value;
+        VelProjectEnemy     = (int)velPorjEnemySlider.value;
+        VelProjectPlayer    = (int)velPorjPlayerSlider.value;
+        FireRatePlayer      = (int)velFRPlayerSlider.value;
+        FireRateEnemy       = (int)velFREnemySlider.value;
+        HealthEnemy         = (int)velHPEnemySlider.value;
     }
 
-    public void ChangePlayerSpeed(float speed) => VelPlayer = (int)speed;
-    public void ChangeEnemySpeed(float speed) => VelEnemy = (int)speed;
-    public void ChangeEnemyBulletSpeed(float speed) => VelProjectEnemy = (int)speed;
-    public void ChangeEnemySpawner(float num) => NumEnemy = (int)num;
+    public void ChangePlayerSpeed(float speed)          => VelPlayer = (int)speed;
+    public void ChangeEnemySpeed(float speed)           => VelEnemy = (int)speed;
+    public void ChangeEnemyBulletSpeed(float speed)     => VelProjectEnemy = (int)speed;
+    public void ChangePlayerBulletSpeed(float speed)    => VelProjectPlayer = (int)speed;
+    public void ChangePlayerFireRate(float speed)       => FireRatePlayer = speed;
+    public void ChangeEnemyFireRate(float speed)        => FireRateEnemy = speed;
+    public void ChangeEnemyHealth(float speed)          => HealthEnemy = (int)speed;
 
     public void SavePrefs() 
     {
@@ -128,16 +140,22 @@ public class UiMaster : MonoBehaviour
         PlayerPrefs.SetInt("VelPlayer", VelPlayer);
         PlayerPrefs.SetInt("VelEnemy", VelEnemy);
         PlayerPrefs.SetInt("VelProjectEnemy", VelProjectEnemy);
-        PlayerPrefs.SetInt("NumEnemy", NumEnemy);
+        PlayerPrefs.SetInt("VelProjectPlayer", VelProjectPlayer);
+        PlayerPrefs.SetFloat("FireRatePlayer", FireRatePlayer);
+        PlayerPrefs.SetFloat("FireRateEnemy", FireRateEnemy);
+        PlayerPrefs.SetInt("HealthEnemy", HealthEnemy);
     }
 
     public void LoadPrefs() 
     {
-        colorBlindDropdown.value = PlayerPrefs.GetInt("ColorBlind", 0);
-        velPlayerSlider.value = PlayerPrefs.GetInt("VelPlayer", 0);
-        velEnemylider.value = PlayerPrefs.GetInt("VelEnemy", 0);
-        velPorjEnemySlider.value = PlayerPrefs.GetInt("VelProjectEnemy", 0);
-        numEnemySlider.value = PlayerPrefs.GetInt("NumEnemy", 0);
+        colorBlindDropdown.value    = PlayerPrefs.GetInt("ColorBlind", 0);
+        velPlayerSlider.value       = PlayerPrefs.GetInt("VelPlayer", 0);
+        velEnemylider.value         = PlayerPrefs.GetInt("VelEnemy", 0);
+        velPorjEnemySlider.value    = PlayerPrefs.GetInt("VelProjectEnemy", 0);
+        velPorjPlayerSlider.value   = PlayerPrefs.GetInt("VelProjectPlayer", 0);
+        velFRPlayerSlider.value     = PlayerPrefs.GetFloat("FireRatePlayer", 0);
+        velFREnemySlider.value      = PlayerPrefs.GetFloat("FireRateEnemy", 0);
+        velHPEnemySlider.value      = PlayerPrefs.GetInt("HealthEnemy", 0);
         UpdateValues();
     }
 }

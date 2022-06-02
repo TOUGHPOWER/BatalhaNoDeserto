@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 {
     [field: SerializeField] public int          HealthPoints { get; private set; }
     [SerializeField] private int                maxHP = 0;
-    [SerializeField] private TextMeshProUGUI    hpText;
+    [SerializeField] private Slider             hpSlider;
 
     public void ChangeHealth(int value)
     {
@@ -18,8 +18,8 @@ public class Health : MonoBehaviour
         else if (HealthPoints <= 0)
             Kill();
 
-        if (hpText != null)
-            hpText.text = HealthPoints.ToString();
+        if (hpSlider != null)
+            hpSlider.value = HealthPoints;
     }
 
     public void SetHealth(int value)
@@ -30,28 +30,37 @@ public class Health : MonoBehaviour
         else if (HealthPoints < 0)
             HealthPoints = 0;
 
-        if (hpText != null)
-            hpText.text = HealthPoints.ToString();
+        if (hpSlider != null)
+            hpSlider.value = HealthPoints;
     }
 
     private void Kill()
     {
         HealthPoints = 0;
-        if (hpText != null)
-            hpText.text = HealthPoints.ToString();
+        if (hpSlider != null)
+            hpSlider.value = HealthPoints;
         gameObject.SetActive(false);
     }
 
     public void AddMaxHp(int value)
     {
         maxHP += value;
-        HealthPoints = maxHP;
+        HealthPoints += value;
+        if (hpSlider != null)
+        {
+            hpSlider.maxValue = maxHP;
+            hpSlider.value = HealthPoints;
+        }
     }
 
     private void Start()
     {
         HealthPoints = maxHP;
-        if (hpText != null)
-            hpText.text = HealthPoints.ToString();
+        hpSlider.maxValue = maxHP;
+        if (hpSlider != null)
+        {
+            hpSlider.maxValue = maxHP;
+            hpSlider.value = HealthPoints;
+        }
     }
 }

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private const int HEALTH_MODIFIER = 1;
-    private const float VELOCITY_MODIFIER = 1/2;
-    private const float SHOOTING_RATE_MODIFIER = 1/3;
     
     private MoveFoward          move;
     private Health              hp;
@@ -22,14 +19,15 @@ public class EnemyController : MonoBehaviour
         SetDificulty();
     }
 
+
     private void SetDificulty()
     {
         ui = FindObjectOfType<UiMaster>();
-        //hp.AddMaxHp(ui.Dificulty * HEALTH_MODIFIER);
-        move.Velocity += ui.VelEnemy * VELOCITY_MODIFIER;
+        hp.AddMaxHp(ui.HealthEnemy);
+        move.Velocity += ui.VelEnemy;
         foreach (Spawner gun in guns)
         {
-            //gun.TimerMax -= ui.Dificulty * SHOOTING_RATE_MODIFIER;
+            gun.TimerMax -= ui.FireRateEnemy;
         }
     }
 }
