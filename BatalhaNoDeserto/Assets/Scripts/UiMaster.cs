@@ -27,6 +27,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Colorblind         colorblind;
     [SerializeField] bool               InGame;
     [SerializeField] GameObject         player;
+    [SerializeField] PlayerController   playerController;
 
     [Header("Options")]
     private int test;
@@ -63,6 +64,7 @@ public class UiMaster : MonoBehaviour
         firstButtonWon.Select();
         Time.timeScale = 0;
         wonMenu.SetActive(true);
+        StopShooting();
     }
     public void OpenLoseMenu()
     {
@@ -74,12 +76,14 @@ public class UiMaster : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
+        StopShooting();
     }
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
         StopShowingOptionsUI();
+        StartShooting();
     }
     public void ShowOptionsUI()
     {
@@ -94,6 +98,29 @@ public class UiMaster : MonoBehaviour
     {
         if (InGame && other.gameObject.tag == "Player")
             OpenWinigMenu();
+    }
+
+    private void StopShooting()
+    {
+        if(player!= null)
+        {
+            foreach (Spawner gun in playerController.guns)
+            {
+                gun.CanShoot = false;
+                print(gun.CanShoot);
+            }
+                
+        }
+        
+    }
+    private void StartShooting()
+    {
+        if (player != null)
+        {
+            foreach (Spawner gun in playerController.guns)
+                gun.CanShoot = true;
+        }
+        
     }
 
     //loaders de scenes

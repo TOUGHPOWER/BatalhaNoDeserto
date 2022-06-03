@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] bool               onTriger;
     [SerializeField] bool               button;
     private float                       timer;
+    public bool                         CanShoot { get; set; } = true;
 
     private void Update()
     {
@@ -26,8 +27,11 @@ public class Spawner : MonoBehaviour
 
     private void Shoot() 
     {
-        Instantiate(spawnObject, transform.position, transform.rotation);
-        timer = TimerMax;
+        if (CanShoot)
+        {
+            Instantiate(spawnObject, transform.position, transform.rotation);
+            timer = TimerMax;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

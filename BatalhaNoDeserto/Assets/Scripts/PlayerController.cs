@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private UiMaster ui;
     [SerializeField] private float velocityController;
     private new Rigidbody rigidbody;
-    [SerializeField] private Spawner[] guns;
+    public Spawner[] guns;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
