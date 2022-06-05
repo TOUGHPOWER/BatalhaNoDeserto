@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4500941, g: 0.5001392, b: 0.5754688, a: 1}
+  m_IndirectSpecularColor: {r: 0.4500944, g: 0.50013953, b: 0.5754696, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,10 +278,10 @@ MonoBehaviour:
   velFRPlayerSlider: {fileID: 1619962295}
   velFREnemySlider: {fileID: 796254919}
   velHPEnemySlider: {fileID: 896180416}
-  colorblind: {fileID: 0}
+  colorblind: {fileID: 1365821271}
   InGame: 1
   player: {fileID: 1233428090}
-  playerController: {fileID: 0}
+  playerController: {fileID: 1233428094}
   <VelPlayer>k__BackingField: 0
   <VelEnemy>k__BackingField: 0
   <VelProjectEnemy>k__BackingField: 0
@@ -8749,6 +8749,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6242814018707926345, guid: 49a8ba22cc5535c4ea7538f087715126, type: 3}
   m_PrefabInstance: {fileID: 6242814019479303451}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1233428092
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233428090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4af29043a3aef947814a3f58977c279, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1233428094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1023625767, guid: 49a8ba22cc5535c4ea7538f087715126, type: 3}
+  m_PrefabInstance: {fileID: 6242814019479303451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233428090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69ae148c13c16f4dae46c2d827317f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1250344642
 GameObject:
   m_ObjectHideFlags: 0
