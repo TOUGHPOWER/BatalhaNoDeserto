@@ -153,10 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23de2b23450e2744804e5184b0ed1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsUI: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  wonMenu: {fileID: 0}
-  lostMenu: {fileID: 0}
+  optionsUI: {fileID: 1727343038}
+  pauseMenu: {fileID: 1221068732}
+  wonMenu: {fileID: 1518707269}
+  lostMenu: {fileID: 298194958}
   firstButtonWon: {fileID: 0}
   firstButtonLost: {fileID: 0}
   colorBlindDropdown: {fileID: 0}

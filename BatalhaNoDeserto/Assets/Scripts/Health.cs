@@ -9,7 +9,9 @@ public class Health : MonoBehaviour
     [field: SerializeField] public int          HealthPoints { get; private set; }
     [SerializeField] private int                maxHP = 0;
     [SerializeField] private Slider             hpSlider;
+    private Animation animation;
 
+  
     public void ChangeHealth(int value)
     {
         HealthPoints += value;
@@ -37,9 +39,11 @@ public class Health : MonoBehaviour
     private void Kill()
     {
         HealthPoints = 0;
+        animation.Play("Death");
         if (hpSlider != null)
             hpSlider.value = HealthPoints;
-        gameObject.SetActive(false);
+        
+        //gameObject.SetActive(false);
     }
 
     public void AddMaxHp(int value)
@@ -55,6 +59,8 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+        animation = GetComponent<Animation>();
+
         HealthPoints = maxHP;
         if (hpSlider != null)
         {

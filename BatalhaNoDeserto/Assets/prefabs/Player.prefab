@@ -522,6 +522,7 @@ GameObject:
   - component: {fileID: 1023625767}
   - component: {fileID: 1023625773}
   - component: {fileID: 1233428092}
+  - component: {fileID: -8540443608728628410}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -644,7 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
-  velocityController: 1.5
+  velocityController: 2
   guns: []
 --- !u!114 &1023625773
 MonoBehaviour:
@@ -757,6 +758,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &-8540443608728628410
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242814018707926356}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6242814018988990985
 GameObject:
   m_ObjectHideFlags: 0

@@ -124,10 +124,28 @@ public class UiMaster : MonoBehaviour
     }
 
     //loaders de scenes
-    public void LoadMainGameScene() 
+
+    public void LoadLevel0()
+    {
+        SavePrefs();
+        SceneManager.LoadScene("Level 0");
+    }
+    public void LoadLevel1() 
     {
         SavePrefs();
         SceneManager.LoadScene("Level 1");
+    }
+
+    public void LoadLevel2() 
+    {
+        SavePrefs();
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void LoadLevel3()
+    {
+        SavePrefs();
+        SceneManager.LoadScene("Level 3");
     }
     public void LoadMainMenu()
     {

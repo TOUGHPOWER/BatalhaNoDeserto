@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 1545709891}
   - component: {fileID: 1545709894}
   - component: {fileID: 6090749072914411302}
+  - component: {fileID: -9146894354155288937}
   m_Layer: 0
   m_Name: Big_Enemy
   m_TagString: Enemy
@@ -742,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <HealthPoints>k__BackingField: 0
   maxHP: 3
-  hpText: {fileID: 0}
+  hpSlider: {fileID: 0}
 --- !u!114 &6090749072914411302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +759,22 @@ MonoBehaviour:
   guns:
   - {fileID: 460312651}
   - {fileID: 299361472}
+--- !u!111 &-9146894354155288937
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241737144047875087}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5241862252783373083
 GameObject:
   m_ObjectHideFlags: 0

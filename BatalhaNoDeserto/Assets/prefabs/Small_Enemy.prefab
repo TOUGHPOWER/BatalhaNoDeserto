@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 1045629831}
   - component: {fileID: 1045629834}
   - component: {fileID: 2618544807129083713}
+  - component: {fileID: 3595718162590950694}
   m_Layer: 0
   m_Name: Small_Enemy
   m_TagString: Enemy
@@ -694,7 +695,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <HealthPoints>k__BackingField: 0
   maxHP: 1
-  hpText: {fileID: 0}
+  hpSlider: {fileID: 0}
+  animation: {fileID: 0}
 --- !u!114 &2618544807129083713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +711,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guns:
   - {fileID: 1029888734}
+--- !u!111 &3595718162590950694
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596479093584231107}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &3596479093664002633
 GameObject:
   m_ObjectHideFlags: 0

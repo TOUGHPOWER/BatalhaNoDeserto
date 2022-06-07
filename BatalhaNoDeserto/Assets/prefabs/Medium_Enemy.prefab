@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 801627458}
   - component: {fileID: 801627461}
   - component: {fileID: 5505213473170659281}
+  - component: {fileID: -8141307115085103603}
   m_Layer: 0
   m_Name: Medium_Enemy
   m_TagString: Enemy
@@ -370,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <HealthPoints>k__BackingField: 0
   maxHP: 2
-  hpText: {fileID: 0}
+  hpSlider: {fileID: 0}
 --- !u!114 &5505213473170659281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +386,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guns:
   - {fileID: 1902772022}
+--- !u!111 &-8141307115085103603
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3342059023368133883}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7b1db13819579f342bb7f632f30cc0fa, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &3342804696666625565
 GameObject:
   m_ObjectHideFlags: 0
