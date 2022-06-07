@@ -157,6 +157,11 @@ public class UiMaster : MonoBehaviour
         SavePrefs();
         Application.Quit();
     }
+    public void Reaload()
+    {
+        SavePrefs();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     
     //saves prefs
     public void UpdateValues()
