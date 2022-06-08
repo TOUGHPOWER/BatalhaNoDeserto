@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 745785374}
+    m_SelectOnUp: {fileID: 619787846}
     m_SelectOnDown: {fileID: 1214315834}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -1368,7 +1368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -3.0144095, y: -1.0828965}
+  m_AnchoredPosition: {x: -3.014408, y: -1.0828965}
   m_SizeDelta: {x: 135.53, y: 41.179}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &243451624
@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -3.014683, y: 0.0004196167}
+  m_AnchoredPosition: {x: -3.0146828, y: 0.0004196167}
   m_SizeDelta: {x: 135.53, y: 33.7896}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &291513460
@@ -3077,8 +3077,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1268750428}
-    m_SelectOnDown: {fileID: 79416073}
+    m_SelectOnUp: {fileID: 745785374}
+    m_SelectOnDown: {fileID: 30255738}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -4196,7 +4196,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1492531125}
-    m_SelectOnDown: {fileID: 30255738}
+    m_SelectOnDown: {fileID: 619787846}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -4399,7 +4399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -3.015519, y: -0.00015258789}
+  m_AnchoredPosition: {x: -3.0155182, y: -0.00015258789}
   m_SizeDelta: {x: 135.53, y: 41.179}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &748107664
@@ -5682,7 +5682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -3.0144095, y: -0.0004196167}
+  m_AnchoredPosition: {x: -3.014408, y: -0.0004196167}
   m_SizeDelta: {x: 135.53, y: 41.179}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &870109826
@@ -8578,7 +8578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1402605802
 RectTransform:
   m_ObjectHideFlags: 0

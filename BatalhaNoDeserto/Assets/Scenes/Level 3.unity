@@ -6705,7 +6705,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782341, y: 1}
+    m_SensorSize: {x: 1.776824, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9267,7 +9267,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1598659456}
+    m_SelectOnUp: {fileID: 1368180640}
     m_SelectOnDown: {fileID: 751295246}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -12243,8 +12243,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1107719482}
-    m_SelectOnDown: {fileID: 46232945}
+    m_SelectOnUp: {fileID: 1598659456}
+    m_SelectOnDown: {fileID: 1002594181}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -12281,8 +12281,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2107023108}
         m_TargetAssemblyTypeName: UiMaster, Assembly-CSharp
-        m_MethodName: ChangePlayerSpeed
-        m_Mode: 0
+        m_MethodName: UpdateValues
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14212,7 +14212,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1880054459}
-    m_SelectOnDown: {fileID: 1002594181}
+    m_SelectOnDown: {fileID: 1368180640}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -15734,7 +15734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1769477418}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1773761670

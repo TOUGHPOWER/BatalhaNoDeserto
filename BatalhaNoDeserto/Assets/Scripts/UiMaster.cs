@@ -55,7 +55,8 @@ public class UiMaster : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        sorce.clip = normalMusic;
+        if(sorce != null)
+            sorce.clip = normalMusic;
     }
     private void Update()
     {
@@ -164,6 +165,11 @@ public class UiMaster : MonoBehaviour
     {
         SavePrefs();
         SceneManager.LoadScene("Main Menu");
+    }
+    public void LoadLevelSelec()
+    {
+        SavePrefs();
+        SceneManager.LoadScene("Level Selector");
     }
     public void Quit()
     {
