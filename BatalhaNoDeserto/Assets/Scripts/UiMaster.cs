@@ -23,6 +23,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Slider             velFRPlayerSlider;
     [SerializeField] Slider             velFREnemySlider;
     [SerializeField] Slider             velHPEnemySlider;
+    [SerializeField] Slider             volumeSlider;
     [Header("Variaveis auxiliares")]
     [SerializeField] Colorblind         colorblind;
     [SerializeField] bool               InGame;
@@ -30,7 +31,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] PlayerController   playerController;
 
     [Header("Options")]
-    private int test;
+    [SerializeField] private float volume;
     [field: SerializeField] public int  VelPlayer { get; private set; }
     [field: SerializeField] public int  VelEnemy { get; private set; }
     [field: SerializeField] public int  VelProjectEnemy { get; private set; }
@@ -39,6 +40,12 @@ public class UiMaster : MonoBehaviour
     [field: SerializeField] public float  FireRateEnemy { get; private set; }
     [field: SerializeField] public int  HealthEnemy { get; private set; }
     [field: SerializeField] public bool FixedMov { get; private set; }
+    [Header("Music")]
+    [SerializeField] AudioSource sorce;
+    [SerializeField] AudioClip normalMusic;
+    [SerializeField] AudioClip wonMusic;
+    [SerializeField] AudioClip lostMusic;
+
 
     //funcoes base
     private void Start()
@@ -48,6 +55,7 @@ public class UiMaster : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        sorce.clip = normalMusic;
     }
     private void Update()
     {
@@ -61,6 +69,8 @@ public class UiMaster : MonoBehaviour
     //abrir e fechar menus
     public void OpenWinigMenu()
     {
+        sorce.clip = wonMusic;
+        sorce.Play();
         firstButtonWon.Select();
         Time.timeScale = 0;
         wonMenu.SetActive(true);
@@ -68,6 +78,8 @@ public class UiMaster : MonoBehaviour
     }
     public void OpenLoseMenu()
     {
+        sorce.clip = lostMusic;
+        sorce.Play();
         firstButtonLost.Select();
         Time.timeScale = 0;
         lostMenu.SetActive(true);
@@ -75,12 +87,14 @@ public class UiMaster : MonoBehaviour
     public void OpenPauseMenu()
     {
         Time.timeScale = 0;
+        sorce.volume = 0.5f;
         pauseMenu.SetActive(true);
         StopShooting();
     }
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
+        sorce.volume = 1f;
         pauseMenu.SetActive(false);
         StopShowingOptionsUI();
         StartShooting();
@@ -107,7 +121,6 @@ public class UiMaster : MonoBehaviour
             foreach (Spawner gun in playerController.guns)
             {
                 gun.CanShoot = false;
-                print(gun.CanShoot);
             }
                 
         }
@@ -174,6 +187,9 @@ public class UiMaster : MonoBehaviour
         FireRatePlayer      = (int)velFRPlayerSlider.value;
         FireRateEnemy       = (int)velFREnemySlider.value;
         HealthEnemy         = (int)velHPEnemySlider.value;
+        volume              = volumeSlider.value;
+        AudioListener.volume = volume;
+
     }
 
     public void ChangePlayerSpeed(float speed)          => VelPlayer = (int)speed;
@@ -194,6 +210,7 @@ public class UiMaster : MonoBehaviour
         PlayerPrefs.SetFloat("FireRatePlayer", FireRatePlayer);
         PlayerPrefs.SetFloat("FireRateEnemy", FireRateEnemy);
         PlayerPrefs.SetInt("HealthEnemy", HealthEnemy);
+        PlayerPrefs.SetFloat("Volume", volume);
     }
 
     public void LoadPrefs() 
@@ -206,6 +223,7 @@ public class UiMaster : MonoBehaviour
         velFRPlayerSlider.value     = PlayerPrefs.GetFloat("FireRatePlayer", 0);
         velFREnemySlider.value      = PlayerPrefs.GetFloat("FireRateEnemy", 0);
         velHPEnemySlider.value      = PlayerPrefs.GetInt("HealthEnemy", 0);
+        volumeSlider.value          = PlayerPrefs.GetInt("Volume", 1);
         UpdateValues();
     }
 }

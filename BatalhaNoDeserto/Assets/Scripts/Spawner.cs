@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] bool               button;
     private float                       timer;
     public bool                         CanShoot { get; set; } = true;
+    [SerializeField] AudioSource        sound;
 
     private void Update()
     {
@@ -29,6 +30,8 @@ public class Spawner : MonoBehaviour
     {
         if (CanShoot)
         {
+            if (sound != null)
+                sound.Play();
             Instantiate(spawnObject, transform.position, transform.rotation);
             timer = TimerMax;
         }
