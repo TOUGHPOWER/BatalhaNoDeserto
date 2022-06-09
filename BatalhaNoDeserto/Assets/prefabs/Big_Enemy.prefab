@@ -316,7 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e9b42ff378653478aa7a047be3e116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 5241737144047875087}
+  agent: {fileID: 5241737144047875087}
+  dropItem: {fileID: 7354756532170506763, guid: 698de2a9a4b8e084c821e28ad024594c, type: 3}
 --- !u!1 &5241118999930285447
 GameObject:
   m_ObjectHideFlags: 0
