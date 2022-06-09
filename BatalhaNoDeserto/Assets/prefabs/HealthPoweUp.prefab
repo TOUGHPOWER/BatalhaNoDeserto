@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7354756532170506772}
   - component: {fileID: 7354756532170506773}
   - component: {fileID: 7354756532170506762}
+  - component: {fileID: 7252416960076031512}
   m_Layer: 0
   m_Name: HealthPoweUp
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7354756532170506763}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2.0999994, z: 32.3}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 1.52}
   m_Children:
   - {fileID: 7350200017108765244}
   m_Father: {fileID: 0}
@@ -61,6 +62,19 @@ MonoBehaviour:
   damage: -1
   destroyInInpact: 1
   targetTag: Player
+--- !u!114 &7252416960076031512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354756532170506763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc62b91fe540d046b81cbc7c00f7882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Velocity>k__BackingField: 1
 --- !u!1001 &7354756531397347358
 PrefabInstance:
   m_ObjectHideFlags: 0
