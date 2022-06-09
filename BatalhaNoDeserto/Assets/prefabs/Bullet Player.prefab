@@ -94,6 +94,7 @@ MonoBehaviour:
   damage: 1
   destroyInInpact: 1
   targetTag: Enemy
+  drop: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
 --- !u!114 &-3723354852875593952
 MonoBehaviour:
   m_ObjectHideFlags: 0

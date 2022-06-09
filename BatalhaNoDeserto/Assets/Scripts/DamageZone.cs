@@ -10,6 +10,8 @@ public class DamageZone : MonoBehaviour
     private bool destroyInInpact;
     [SerializeField]
     private string targetTag;
+    [SerializeField]
+    private GameObject drop;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +22,12 @@ public class DamageZone : MonoBehaviour
             target.ChangeHealth(-damage);
 
             if (destroyInInpact)
+            {
+                if (drop != null)
+                    Instantiate(drop, transform.position, transform.rotation);
+
                 Destroy(gameObject);
+            }
         }  
     }
 }
