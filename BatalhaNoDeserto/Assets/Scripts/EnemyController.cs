@@ -27,7 +27,9 @@ public class EnemyController : MonoBehaviour
         move.Velocity += ui.VelEnemy;
         foreach (Spawner gun in guns)
         {
-            gun.TimerMax -= ui.FireRateEnemy;
+            gun.TimerMax = gun.NormalTimerMax - ui.FireRateEnemy;
+            if (gun.TimerMax <= 0)
+                gun.TimerMax = 0.1f;
         }
     }
 }

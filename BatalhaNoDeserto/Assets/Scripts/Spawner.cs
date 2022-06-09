@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [field: SerializeField] public float NormalTimerMax { get; set; }
     [field: SerializeField] public float TimerMax { get; set; }
     [SerializeField] GameObject         spawnObject;
     [SerializeField] bool               automatic;

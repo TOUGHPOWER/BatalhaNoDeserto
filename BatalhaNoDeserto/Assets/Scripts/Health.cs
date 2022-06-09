@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] AudioClip                  deathSound;
     [SerializeField] AudioClip                  hitSound;
     [SerializeField] AudioSource                sorce;
+    [SerializeField] List<Spawner>              guns;
 
   
     public void ChangeHealth(int value)
@@ -60,6 +61,8 @@ public class Health : MonoBehaviour
         }
         if (hpSlider != null)
             hpSlider.value = HealthPoints;
+        foreach (Spawner gun in guns)
+            gun.enabled = false;
     }
 
     public void AddMaxHp(int value)

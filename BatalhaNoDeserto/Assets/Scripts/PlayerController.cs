@@ -11,10 +11,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        
-        foreach(Spawner gun in guns)
+    }
+    
+    public void UpdateFirerate()
+    {
+        foreach (Spawner gun in guns)
         {
-            gun.TimerMax -= ui.FireRatePlayer;
+            gun.TimerMax = gun.NormalTimerMax - ui.FireRatePlayer;
+            print(gun.NormalTimerMax + "-" + ui.FireRatePlayer + "=" + gun.TimerMax);
+            if (gun.TimerMax <= 0)
+                gun.TimerMax = 0.1f;
         }
     }
 

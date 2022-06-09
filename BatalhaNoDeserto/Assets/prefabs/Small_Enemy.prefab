@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094bbcec499379d4598cdb0e63d052df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <NormalTimerMax>k__BackingField: 1.5
   <TimerMax>k__BackingField: 1.5
   spawnObject: {fileID: 2818164954906461468, guid: 8ca9be1212d7f23449416d407e09acf7, type: 3}
   automatic: 1
@@ -737,6 +738,8 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 6e0b10f5c7fdc924497741cd987708e4, type: 3}
   hitSound: {fileID: 8300000, guid: 477eecfc1b167474296508e64e9ad8c2, type: 3}
   sorce: {fileID: 3333165554872413030}
+  guns:
+  - {fileID: 1029888734}
 --- !u!114 &2618544807129083713
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094bbcec499379d4598cdb0e63d052df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TimerMax>k__BackingField: 0.5
+  <NormalTimerMax>k__BackingField: 1
+  <TimerMax>k__BackingField: 1
   spawnObject: {fileID: 2818164954906461468, guid: f3061e7c6fc663c4ca700c2f000401d9, type: 3}
   automatic: 0
   onTriger: 0
@@ -189,7 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094bbcec499379d4598cdb0e63d052df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TimerMax>k__BackingField: 0.5
+  <NormalTimerMax>k__BackingField: 1
+  <TimerMax>k__BackingField: 1
   spawnObject: {fileID: 2818164954906461468, guid: f3061e7c6fc663c4ca700c2f000401d9, type: 3}
   automatic: 0
   onTriger: 0
@@ -708,6 +710,9 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 6e0b10f5c7fdc924497741cd987708e4, type: 3}
   hitSound: {fileID: 8300000, guid: 477eecfc1b167474296508e64e9ad8c2, type: 3}
   sorce: {fileID: 1233428092}
+  guns:
+  - {fileID: 1151884089}
+  - {fileID: 1315373553}
 --- !u!82 &1233428092
 AudioSource:
   m_ObjectHideFlags: 0

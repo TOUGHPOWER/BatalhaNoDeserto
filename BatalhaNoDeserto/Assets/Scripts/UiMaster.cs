@@ -190,12 +190,13 @@ public class UiMaster : MonoBehaviour
         VelEnemy            = (int)velEnemylider.value;
         VelProjectEnemy     = (int)velPorjEnemySlider.value;
         VelProjectPlayer    = (int)velPorjPlayerSlider.value;
-        FireRatePlayer      = (int)velFRPlayerSlider.value;
-        FireRateEnemy       = (int)velFREnemySlider.value;
+        FireRatePlayer      = velFRPlayerSlider.value;
+        FireRateEnemy       = velFREnemySlider.value;
         HealthEnemy         = (int)velHPEnemySlider.value;
         volume              = volumeSlider.value;
         AudioListener.volume = volume;
-
+        if(playerController != null)
+            playerController.UpdateFirerate();
     }
 
     public void ChangePlayerSpeed(float speed)          => VelPlayer = (int)speed;
@@ -208,6 +209,7 @@ public class UiMaster : MonoBehaviour
 
     public void SavePrefs() 
     {
+        print("Save");
         PlayerPrefs.SetInt("ColorBlind", colorblind.Type);
         PlayerPrefs.SetInt("VelPlayer", VelPlayer);
         PlayerPrefs.SetInt("VelEnemy", VelEnemy);
@@ -229,7 +231,7 @@ public class UiMaster : MonoBehaviour
         velFRPlayerSlider.value     = PlayerPrefs.GetFloat("FireRatePlayer", 0);
         velFREnemySlider.value      = PlayerPrefs.GetFloat("FireRateEnemy", 0);
         velHPEnemySlider.value      = PlayerPrefs.GetInt("HealthEnemy", 0);
-        volumeSlider.value          = PlayerPrefs.GetInt("Volume", 1);
+        volumeSlider.value          = PlayerPrefs.GetFloat("Volume", 1);
         UpdateValues();
     }
 }
