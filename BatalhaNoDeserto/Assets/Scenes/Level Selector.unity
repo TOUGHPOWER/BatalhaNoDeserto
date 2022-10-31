@@ -2614,12 +2614,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23de2b23450e2744804e5184b0ed1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsUI: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  wonMenu: {fileID: 0}
-  lostMenu: {fileID: 0}
+  optionsUI: {fileID: 1290232618}
+  pauseMenu: {fileID: 1290232618}
+  wonMenu: {fileID: 1290232618}
+  lostMenu: {fileID: 1290232618}
+  mainMenu: {fileID: 1290232618}
+  selectorMenu: {fileID: 811958508}
   firstButtonWon: {fileID: 0}
   firstButtonLost: {fileID: 0}
+  firstButtonMainMenu: {fileID: 0}
+  firstButtonPauseMenu: {fileID: 0}
+  firstButtonOptionsMenu: {fileID: 0}
+  firstButtonLevelSelector: {fileID: 573390234}
   colorBlindDropdown: {fileID: 942400078}
   velPlayerSlider: {fileID: 1560632978}
   velEnemylider: {fileID: 330419033}
@@ -2642,7 +2648,7 @@ MonoBehaviour:
   <FireRateEnemy>k__BackingField: 0
   <HealthEnemy>k__BackingField: 0
   <FixedMov>k__BackingField: 0
-  sorce: {fileID: 551055631}
+  source: {fileID: 0}
   normalMusic: {fileID: 8300000, guid: df20bb6275b7a8641a3c0102c6743ec2, type: 3}
   wonMusic: {fileID: 0}
   lostMusic: {fileID: 0}
@@ -5867,6 +5873,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282201862}
   m_CullTransparentMesh: 1
+--- !u!1 &1290232618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290232619}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1290232619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290232618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5373902, y: 2.780839, z: -83.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1291071340
 GameObject:
   m_ObjectHideFlags: 0

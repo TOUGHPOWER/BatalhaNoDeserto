@@ -12,9 +12,16 @@ public class UiMaster : MonoBehaviour
     [SerializeField] GameObject         pauseMenu;
     [SerializeField] GameObject         wonMenu;
     [SerializeField] GameObject         lostMenu;
-    [Header("Elementos UI")]
+    [SerializeField] GameObject         mainMenu;
+    [SerializeField] GameObject         selectorMenu;
+    [Header("Buttons")]
     [SerializeField] Button             firstButtonWon;
     [SerializeField] Button             firstButtonLost;
+    [SerializeField] Button             firstButtonMainMenu;
+    [SerializeField] Button             firstButtonPauseMenu;
+    [SerializeField] Button             firstButtonOptionsMenu;
+    [SerializeField] Button             firstButtonLevelSelector;
+    [Header("Sliders & Dropdowns")]
     [SerializeField] Dropdown           colorBlindDropdown;
     [SerializeField] Slider             velPlayerSlider;
     [SerializeField] Slider             velEnemylider;
@@ -41,7 +48,7 @@ public class UiMaster : MonoBehaviour
     [field: SerializeField] public int  HealthEnemy { get; private set; }
     [field: SerializeField] public bool FixedMov { get; private set; }
     [Header("Music")]
-    [SerializeField] AudioSource sorce;
+    [SerializeField] AudioSource source;
     [SerializeField] AudioClip normalMusic;
     [SerializeField] AudioClip wonMusic;
     [SerializeField] AudioClip lostMusic;
@@ -55,8 +62,8 @@ public class UiMaster : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        if(sorce != null)
-            sorce.clip = normalMusic;
+        if(source != null)
+            source.clip = normalMusic;
     }
     private void Update()
     {
@@ -65,13 +72,52 @@ public class UiMaster : MonoBehaviour
 
         if (InGame && !player.activeInHierarchy && !lostMenu.activeInHierarchy)
             OpenLoseMenu();
+
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            print("Hello");
+            if (optionsUI.activeInHierarchy)
+            {
+                firstButtonOptionsMenu.Select();
+                
+            }
+            else if (pauseMenu.activeInHierarchy)
+            {
+                firstButtonPauseMenu.Select();
+            }
+            else if (wonMenu.activeInHierarchy)
+            {
+                firstButtonWon.Select();
+                
+            }
+            else if (lostMenu.activeInHierarchy)
+            {
+                firstButtonLost.Select();
+                
+            }
+            else if (mainMenu.activeInHierarchy)
+            {
+                firstButtonMainMenu.Select();
+                
+            }
+            else if (selectorMenu.activeInHierarchy)
+            {
+                firstButtonLevelSelector.Select();
+
+            }
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        
+
+
     }
 
     //abrir e fechar menus
     public void OpenWinigMenu()
     {
-        sorce.clip = wonMusic;
-        sorce.Play();
+        source.clip = wonMusic;
+        source.Play();
         firstButtonWon.Select();
         Time.timeScale = 0;
         wonMenu.SetActive(true);
@@ -79,8 +125,8 @@ public class UiMaster : MonoBehaviour
     }
     public void OpenLoseMenu()
     {
-        sorce.clip = lostMusic;
-        sorce.Play();
+        source.clip = lostMusic;
+        source.Play();
         firstButtonLost.Select();
         Time.timeScale = 0;
         lostMenu.SetActive(true);
@@ -88,14 +134,14 @@ public class UiMaster : MonoBehaviour
     public void OpenPauseMenu()
     {
         Time.timeScale = 0;
-        sorce.volume = 0.5f;
+        source.volume = 0.5f;
         pauseMenu.SetActive(true);
         StopShooting();
     }
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
-        sorce.volume = 1f;
+        source.volume = 1f;
         pauseMenu.SetActive(false);
         StopShowingOptionsUI();
         StartShooting();
