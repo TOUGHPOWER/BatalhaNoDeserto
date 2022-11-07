@@ -64,6 +64,8 @@ public class UiMaster : MonoBehaviour
         Cursor.visible = false;
         if(source != null)
             source.clip = normalMusic;
+        optionsUI.SetActive(false);
+        pauseMenu.SetActive(false);
     }
     private void Update()
     {
@@ -136,6 +138,7 @@ public class UiMaster : MonoBehaviour
         Time.timeScale = 0;
         source.volume = 0.5f;
         pauseMenu.SetActive(true);
+        firstButtonPauseMenu.Select();
         StopShooting();
     }
     public void ClosePauseMenu()
@@ -149,6 +152,7 @@ public class UiMaster : MonoBehaviour
     public void ShowOptionsUI()
     {
         optionsUI.SetActive(true);
+        firstButtonOptionsMenu.Select();
     }
     public void StopShowingOptionsUI()
     {
