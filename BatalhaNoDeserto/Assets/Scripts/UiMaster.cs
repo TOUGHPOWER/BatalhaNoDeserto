@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Wilberforce;
+using UnityEngine.Audio;
 
 public class UiMaster : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Button             firstButtonPauseMenu;
     [SerializeField] Button             firstButtonOptionsMenu;
     [SerializeField] Button             firstButtonLevelSelector;
-    [Header("Sliders & Dropdowns")]
+    [Header("Sliders & Dropdowns & Toggles")]
     [SerializeField] Dropdown           colorBlindDropdown;
     [SerializeField] Slider             velPlayerSlider;
     [SerializeField] Slider             velEnemylider;
@@ -30,7 +32,9 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Slider             velFRPlayerSlider;
     [SerializeField] Slider             velFREnemySlider;
     [SerializeField] Slider             velHPEnemySlider;
-    [SerializeField] Slider             volumeSlider;
+    [SerializeField] Slider             musicVolumeSlider;
+    [SerializeField] Slider             effectVolumeSlider;
+    [SerializeField] Toggle             fixedMovToggle;
     [Header("Variaveis auxiliares")]
     [SerializeField] Colorblind         colorblind;
     [SerializeField] bool               InGame;
@@ -38,7 +42,8 @@ public class UiMaster : MonoBehaviour
     [SerializeField] PlayerController   playerController;
 
     [Header("Options")]
-    [SerializeField] private float volume;
+    [SerializeField] private float musicVolume;
+    [SerializeField] private float effectVolume;
     [field: SerializeField] public int  VelPlayer { get; private set; }
     [field: SerializeField] public int  VelEnemy { get; private set; }
     [field: SerializeField] public int  VelProjectEnemy { get; private set; }
@@ -52,6 +57,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] AudioClip normalMusic;
     [SerializeField] AudioClip wonMusic;
     [SerializeField] AudioClip lostMusic;
+    [SerializeField] AudioMixer audioMixer;
 
 
     //funcoes base
@@ -243,8 +249,11 @@ public class UiMaster : MonoBehaviour
         FireRatePlayer      = velFRPlayerSlider.value;
         FireRateEnemy       = velFREnemySlider.value;
         HealthEnemy         = (int)velHPEnemySlider.value;
-        volume              = volumeSlider.value;
-        AudioListener.volume = volume;
+        musicVolume         = musicVolumeSlider.value;
+        effectVolume        = effectVolumeSlider.value;
+        FixedMov            = fixedMovToggle.isOn;
+        audioMixer.SetFloat("musicVol", musicVolume);
+        audioMixer.SetFloat("effectVol", effectVolume);
         if(playerController != null)
             playerController.UpdateFirerate();
     }
@@ -268,7 +277,9 @@ public class UiMaster : MonoBehaviour
         PlayerPrefs.SetFloat("FireRatePlayer", FireRatePlayer);
         PlayerPrefs.SetFloat("FireRateEnemy", FireRateEnemy);
         PlayerPrefs.SetInt("HealthEnemy", HealthEnemy);
-        PlayerPrefs.SetFloat("Volume", volume);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("EffectVolume", effectVolume);
+        PlayerPrefs.SetInt("FixedMov", Convert.ToInt32(FixedMov));
     }
 
     public void LoadPrefs() 
@@ -281,7 +292,9 @@ public class UiMaster : MonoBehaviour
         velFRPlayerSlider.value     = PlayerPrefs.GetFloat("FireRatePlayer", 0);
         velFREnemySlider.value      = PlayerPrefs.GetFloat("FireRateEnemy", 0);
         velHPEnemySlider.value      = PlayerPrefs.GetInt("HealthEnemy", 0);
-        volumeSlider.value          = PlayerPrefs.GetFloat("Volume", 1);
+        musicVolumeSlider.value     = PlayerPrefs.GetFloat("MusicVolume", 0);
+        effectVolumeSlider.value    = PlayerPrefs.GetFloat("EffectVolume", 0);
+        fixedMovToggle.isOn         = Convert.ToBoolean(PlayerPrefs.GetInt("FixedMov", 0));
         UpdateValues();
     }
 }

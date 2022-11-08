@@ -60,7 +60,7 @@ AudioSource:
   m_GameObject: {fileID: 1151884087}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1439547889565247153, guid: 6da02366da3236241924b882fb99ee87, type: 2}
   m_audioClip: {fileID: 8300000, guid: 83dd5d706a4842f458fb6d24849019c4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -688,6 +688,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
   velocityController: 2
+  lanes:
+  - -10
+  - 0
+  - 10
   guns:
   - {fileID: 1151884089}
   - {fileID: 1315373553}
@@ -722,7 +726,7 @@ AudioSource:
   m_GameObject: {fileID: 6242814018707926356}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1439547889565247153, guid: 6da02366da3236241924b882fb99ee87, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4500944, g: 0.50013953, b: 0.5754696, a: 1}
+  m_IndirectSpecularColor: {r: 0.4500941, g: 0.5001392, b: 0.5754688, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5275,8 +5275,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 564448356}
   m_HandleRect: {fileID: 955604207}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -7141,7 +7141,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.776824, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10317,8 +10317,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 73370816}
   m_HandleRect: {fileID: 1269457403}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -12010,12 +12010,15 @@ MonoBehaviour:
   velFRPlayerSlider: {fileID: 1385442525}
   velFREnemySlider: {fileID: 249878985}
   velHPEnemySlider: {fileID: 2145238596}
-  volumeSlider: {fileID: 634537598}
+  musicVolumeSlider: {fileID: 1271318368}
+  effectVolumeSlider: {fileID: 634537598}
+  fixedMovToggle: {fileID: 2093709949}
   colorblind: {fileID: 782405125}
   InGame: 1
   player: {fileID: 1672366643}
   playerController: {fileID: 1672366641}
-  volume: 0
+  musicVolume: 0
+  effectVolume: 0
   <VelPlayer>k__BackingField: 0
   <VelEnemy>k__BackingField: 0
   <VelProjectEnemy>k__BackingField: 0
@@ -12028,6 +12031,7 @@ MonoBehaviour:
   normalMusic: {fileID: 8300000, guid: 9ab406e2d2d0f3c4789c80490787627e, type: 3}
   wonMusic: {fileID: 8300000, guid: df20bb6275b7a8641a3c0102c6743ec2, type: 3}
   lostMusic: {fileID: 8300000, guid: d85c17633b08764469d65ecc7fe13ff3, type: 3}
+  audioMixer: {fileID: 24100000, guid: 6da02366da3236241924b882fb99ee87, type: 2}
 --- !u!82 &1657512414
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12037,7 +12041,7 @@ AudioSource:
   m_GameObject: {fileID: 1657512412}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8907999581704579464, guid: 6da02366da3236241924b882fb99ee87, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9ab406e2d2d0f3c4789c80490787627e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -15462,7 +15466,7 @@ GameObject:
   - component: {fileID: 2093709948}
   - component: {fileID: 2093709949}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: FixedMov Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
