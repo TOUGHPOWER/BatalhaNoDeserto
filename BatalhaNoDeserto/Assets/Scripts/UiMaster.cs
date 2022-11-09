@@ -16,6 +16,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] GameObject         lostMenu;
     [SerializeField] GameObject         mainMenu;
     [SerializeField] GameObject         selectorMenu;
+    [SerializeField] TutorialPopUp      tutorialPopUp;
     [Header("Buttons")]
     [SerializeField] Button             firstButtonWon;
     [SerializeField] Button             firstButtonLost;
@@ -153,6 +154,7 @@ public class UiMaster : MonoBehaviour
         source.volume = 1f;
         pauseMenu.SetActive(false);
         StopShowingOptionsUI();
+        tutorialPopUp.CloseTutorialMenu();
         StartShooting();
     }
     public void ShowOptionsUI()

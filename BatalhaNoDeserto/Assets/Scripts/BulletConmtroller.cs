@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletConmtroller : MonoBehaviour
 {
-    private const int VEL_MODIFIER = 2;
+    private const int VEL_MODIFIER = 1;
     private UiMaster ui;
     private MoveFoward move;
     [SerializeField] bool player;

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         lastAxisValue = Input.GetAxis("Horizontal");
+        currentLane = 0;
     }
     
     public void UpdateFirerate()
