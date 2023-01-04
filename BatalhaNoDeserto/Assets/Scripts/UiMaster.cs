@@ -17,6 +17,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] GameObject         mainMenu;
     [SerializeField] GameObject         selectorMenu;
     [SerializeField] TutorialPopUp      tutorialPopUp;
+    [SerializeField] GameObject         starterPopup;
     [Header("Buttons")]
     [SerializeField] Button             firstButtonWon;
     [SerializeField] Button             firstButtonLost;
@@ -24,6 +25,7 @@ public class UiMaster : MonoBehaviour
     [SerializeField] Button             firstButtonPauseMenu;
     [SerializeField] Button             firstButtonOptionsMenu;
     [SerializeField] Button             firstButtonLevelSelector;
+    [SerializeField] Button             starterButton;
     [Header("Sliders & Dropdowns & Toggles")]
     [SerializeField] Dropdown           colorBlindDropdown;
     [SerializeField] Slider             velPlayerSlider;
@@ -39,6 +41,7 @@ public class UiMaster : MonoBehaviour
     [Header("Variaveis auxiliares")]
     [SerializeField] Colorblind         colorblind;
     [SerializeField] bool               InGame;
+    [SerializeField] bool               InTutorial;
     [SerializeField] GameObject         player;
     [SerializeField] PlayerController   playerController;
 
@@ -73,10 +76,22 @@ public class UiMaster : MonoBehaviour
             source.clip = normalMusic;
         optionsUI.SetActive(false);
         pauseMenu.SetActive(false);
+        wonMenu.SetActive(false);
+        lostMenu.SetActive(false);
+
+        if (InGame && InTutorial)
+        {
+            CloseStarterPopup();
+        }
+        else if (InGame)
+        {
+            OpenStarterPopup();
+        }
+
     }
     private void Update()
     {
-        if (InGame && Input.GetButtonDown("Pause"))
+        if (InGame && Input.GetButtonDown("Pause") || InTutorial && Input.GetButtonDown("Pause"))
             OpenPauseMenu();
 
         if (InGame && !player.activeInHierarchy && !lostMenu.activeInHierarchy)
@@ -113,6 +128,10 @@ public class UiMaster : MonoBehaviour
             {
                 firstButtonLevelSelector.Select();
 
+            }
+            else if (starterPopup.activeInHierarchy) 
+            {
+                starterButton.Select();
             }
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -166,6 +185,19 @@ public class UiMaster : MonoBehaviour
     {
         optionsUI.SetActive(false);
         SavePrefs();
+    }
+
+    public void OpenStarterPopup() 
+    {
+        Time.timeScale = 0;
+        starterPopup.SetActive(true);
+        starterButton.Select();
+        
+    }
+    public void CloseStarterPopup()
+    {
+        starterPopup.SetActive(false);
+        Time.timeScale = 1;
     }
     private void OnTriggerEnter(Collider other)
     {
