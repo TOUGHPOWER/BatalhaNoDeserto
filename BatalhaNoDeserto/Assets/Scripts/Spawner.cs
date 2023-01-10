@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] bool               onTriger;
     [SerializeField] bool               button;
     private float                       timer;
-    public bool                         CanShoot { get; set; } = true;
+    [field: SerializeField] public bool                         CanShoot { get; set; } = true;
     [SerializeField] AudioSource        sound;
 
     private void Update()

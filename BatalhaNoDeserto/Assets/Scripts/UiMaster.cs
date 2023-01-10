@@ -173,7 +173,8 @@ public class UiMaster : MonoBehaviour
         source.volume = 1f;
         pauseMenu.SetActive(false);
         StopShowingOptionsUI();
-        tutorialPopUp.CloseTutorialMenu();
+        if(tutorialPopUp != null)
+            tutorialPopUp.CloseTutorialMenu();
         StartShooting();
     }
     public void ShowOptionsUI()
