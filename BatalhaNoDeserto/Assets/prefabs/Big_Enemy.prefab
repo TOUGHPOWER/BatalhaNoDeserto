@@ -49,6 +49,7 @@ MonoBehaviour:
   automatic: 1
   onTriger: 0
   button: 0
+  <CanShoot>k__BackingField: 1
   sound: {fileID: 0}
 --- !u!1 &460312650
 GameObject:
@@ -100,6 +101,7 @@ MonoBehaviour:
   automatic: 1
   onTriger: 0
   button: 0
+  <CanShoot>k__BackingField: 1
   sound: {fileID: 6289041013341265880}
 --- !u!82 &6289041013341265880
 AudioSource:
@@ -843,7 +845,7 @@ Transform:
   m_GameObject: {fileID: 5241737144047875087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.67, y: 3.4, z: 20.6}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.428263, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 8131574892321919978}
   - {fileID: 460312652}

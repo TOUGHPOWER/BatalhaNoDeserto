@@ -262,6 +262,11 @@ public class UiMaster : MonoBehaviour
         SavePrefs();
         SceneManager.LoadScene("Level Selector");
     }
+    public void LoadSpec()
+    {
+        SavePrefs();
+        SceneManager.LoadScene("Techinal Spec");
+    }
     public void Quit()
     {
         SavePrefs();
