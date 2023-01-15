@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43541282, g: 0.5930251, b: 0.8128141, a: 1}
+  m_IndirectSpecularColor: {r: 0.43541613, g: 0.5930195, b: 0.8128287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -269,8 +269,17 @@ MonoBehaviour:
   pauseMenu: {fileID: 1755687308}
   wonMenu: {fileID: 1721092357}
   lostMenu: {fileID: 1202908944}
+  mainMenu: {fileID: 0}
+  selectorMenu: {fileID: 0}
+  tutorialPopUp: {fileID: 0}
+  starterPopup: {fileID: 0}
   firstButtonWon: {fileID: 1489381965}
   firstButtonLost: {fileID: 1292351771}
+  firstButtonMainMenu: {fileID: 0}
+  firstButtonPauseMenu: {fileID: 0}
+  firstButtonOptionsMenu: {fileID: 0}
+  firstButtonLevelSelector: {fileID: 0}
+  starterButton: {fileID: 0}
   colorBlindDropdown: {fileID: 1214315834}
   velPlayerSlider: {fileID: 1604000270}
   velEnemylider: {fileID: 1903341871}
@@ -279,12 +288,16 @@ MonoBehaviour:
   velFRPlayerSlider: {fileID: 1619962295}
   velFREnemySlider: {fileID: 796254919}
   velHPEnemySlider: {fileID: 896180416}
-  volumeSlider: {fileID: 619787846}
+  musicVolumeSlider: {fileID: 0}
+  effectVolumeSlider: {fileID: 0}
+  fixedMovToggle: {fileID: 0}
   colorblind: {fileID: 1365821271}
   InGame: 1
+  InTutorial: 0
   player: {fileID: 1233428090}
   playerController: {fileID: 1233428095}
-  volume: 0
+  musicVolume: 0
+  effectVolume: 0
   <VelPlayer>k__BackingField: 0
   <VelEnemy>k__BackingField: 0
   <VelProjectEnemy>k__BackingField: 0
@@ -293,10 +306,11 @@ MonoBehaviour:
   <FireRateEnemy>k__BackingField: 0
   <HealthEnemy>k__BackingField: 0
   <FixedMov>k__BackingField: 0
-  sorce: {fileID: 11629375}
+  source: {fileID: 0}
   normalMusic: {fileID: 8300000, guid: 9ab406e2d2d0f3c4789c80490787627e, type: 3}
   wonMusic: {fileID: 8300000, guid: df20bb6275b7a8641a3c0102c6743ec2, type: 3}
   lostMusic: {fileID: 8300000, guid: d85c17633b08764469d65ecc7fe13ff3, type: 3}
+  audioMixer: {fileID: 0}
 --- !u!4 &11629373
 Transform:
   m_ObjectHideFlags: 0
@@ -6912,7 +6926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.879791}
+  m_AnchoredPosition: {x: 0, y: -31.87976}
   m_SizeDelta: {x: -551.0082, y: -203.6191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1202908946
@@ -9348,7 +9362,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782341, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10583,7 +10597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.879791}
+  m_AnchoredPosition: {x: 0, y: -31.87976}
   m_SizeDelta: {x: -551.0082, y: -203.6191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721092359
